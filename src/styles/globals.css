@@ -1,0 +1,58 @@
+@import "tailwindcss";
+@theme {
+  --color-secondary: #f9c312;
+  --color-secondary-light: #ffd6c5;
+  --color-primary: #4b3621;
+  --color-primary-light: #896f55;
+  --color-primary-dark: #3c2e02;
+  --color-light: #fff4e2;
+
+  --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --container-xs: "375px";
+  --container-sm: "640px";
+  --container-md: "768px";
+  --container-lg: "1024px";
+  --container-xl: "1140px";
+  --font-crimson-text: "Crimson Text", serif;
+  --color-primary-text: #ffffff;
+}
+:root {
+  --color-secondary: #f9c312;
+  --color-primary: #4b3621;
+  --color-primary-light: #896f55;
+  --color-primary-dark: #3c2e02;
+  --color-light: #fff4e2;
+  --color-secondary-light: #ffd6c5;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #cdbbaa;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.text-nav-medium {
+  font-size: 18px;
+}
+.btn-primary {
+  @apply sm:px-3 px-2 sm:py-2 py-1 text-center text-primary-text sm:text-xl text-sm rounded-full justify-center font-crimson-text bg-linear-to-b from-primary via-primary-light to-primary hover:bg-linear-to-r focus:ring-1 focus:ring-primary-text shadow-lg leading-4 cursor-pointer;
+}
+.on-hover {
+  @apply hover:text-secondary transition-all cursor-pointer;
+}
+.cart-badge {
+  @apply w-4 h-4 text-xs grid place-content-center rounded-full font-crimson-text
+         bg-secondary text-black font-bold absolute -top-3 -right-3;
+}
+.update-btn {
+  @apply bg-red-600 text-white text-sm rounded-full py-3 px-6 cursor-pointer;
+}
+
